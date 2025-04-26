@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thread</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <header class="bg-gray-800 p-4 flex justify-between items-center">
+    <div class="flex items-center">
+      <img src="logo.png" alt="Logo" class="h-10 mr-2">
+      <h1 class="text-2xl font-bold">Forum</h1>
+    </div>
+    <div>
+      <span id="user-status" class="mr-4">Nicht angemeldet</span>
+      <button id="show-login-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</button>
+      <button id="show-register-button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Registrieren</button>
+      <button id="logout-button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hidden">Logout</button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-4">
+    <div id="login-form" class="bg-gray-800 p-4 rounded-lg mb-4 hidden">
+      <h2 class="text-xl font-semibold mb-2">Login</h2>
+      <input id="login-username" type="text" placeholder="Benutzername" class="w-full p-2 mb-2 bg-gray-700 rounded text-white">
+      <input id="login-password" type="password" placeholder="Passwort" class="w-full p-2 mb-2 bg-gray-700 rounded text-white">
+      <button id="login-submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Anmelden</button>
+    </div>
+
+    <div id="register-form" class="bg-gray-800 p-4 rounded-lg mb-4 hidden">
+      <h2 class="text-xl font-semibold mb-2">Registrieren</h2>
+      <input id="register-username" type="text" placeholder="Benutzername" class="w-full p-2 mb-2 bg-gray-700 rounded text-white">
+      <input id="register-password" type="password" placeholder="Passwort" class="w-full p-2 mb-2 bg-gray-700 rounded text-white">
+      <button id="register-submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Registrieren</button>
+    </div>
+
+    <button id="back-button" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mb-4">Zurück</button>
+    <div id="breadcrumb-container" class="text-gray-400 mb-4"></div>
+    <div id="thread-container" class="bg-gray-800 rounded-lg mb-8"></div>
+
+    <div id="login-prompt" class="bg-gray-800 p-4 rounded-lg mb-4 hidden">
+      <p class="text-gray-400">Bitte melde dich an, um zu antworten!</p>
+    </div>
+
+    <div id="reply-form" class="bg-gray-800 p-4 rounded-lg hidden">
+      <h2 class="text-xl font-semibold mb-2">Antworten</h2>
+      <textarea id="reply-content" placeholder="Deine Antwort" class="w-full p-2 mb-2 bg-gray-700 rounded text-white h-32"></textarea>
+      <div class="flex space-x-2 mb-2">
+        <button class="emoji-btn bg-gray-600 hover:bg-gray-700 text-white py-1 px-2 rounded" data-emoji="😊">😊</button>
+        <button class="emoji-btn bg-gray-600 hover:bg-gray-700 text-white py-1 px-2 rounded" data-emoji="👍">👍</button>
+        <button class="emoji-btn bg-gray-600 hover:bg-gray-700 text-white py-1 px-2 rounded" data-emoji="🔥">🔥</button>
+        <button id="code-btn" class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-2 rounded">Code</button>
+      </div>
+      <button id="reply-submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Antwort absenden</button>
+    </div>
+  </main>
+
+  <script src="thread.js"></script>
+</body>
+</html>
